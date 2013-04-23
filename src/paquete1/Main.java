@@ -11,7 +11,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		Ventana ventana = new Ventana();
-		ventana.construirVentana("/*nombre de la aplicaciÃ³n*/");
+		ventana.construirVentana("/*nombre de la aplicación*/");
 	}
 	
 }

@@ -13,7 +13,7 @@ public class Ventana
 	private JFrame ventana;
 	
 	/**
-	 * @param args
+	 * constructor de la clase Ventana
 	 */
 	public Ventana() 
 	{
@@ -29,22 +29,22 @@ public class Ventana
     	construirBarraMenus(ventana);
     	
     	Container panelContenedor = ventana.getContentPane();
-        panelContenedor.setLayout(new BorderLayout());//dispone el contenido en partes para poder ir añadiendolos
+        panelContenedor.setLayout(new BorderLayout());//dispone el contenido en partes para poder ir a�adiendolos
         
     	ventana.pack();
         ventana.setVisible(true);
     }
     
     /**
-     * Crea la barra de menús de la ventana principal
-     * @param ventana   La ventana donde se mostrará la barra de menús
+     * Crea la barra de menus de la ventana principal
+     * @param ventana   La ventana donde se mostrar la barra de menus
      */
     private void construirBarraMenus(JFrame ventana)
     {
     	JMenuBar barraDeMenus = new JMenuBar();
         ventana.setJMenuBar(barraDeMenus);
         
-        //----------------------------------crea el menú Archivo
+        //----------------------------------crea el menu Archivo
         
         JMenu menuArchivo = new JMenu("Archivo");
         barraDeMenus.add(menuArchivo);
@@ -77,7 +77,7 @@ public class Ventana
     }
     
     /**
-     * Función Abrir. Abre un archivo
+     * Funcion Abrir. Abre un archivo
      */
     private void abrirArchivo()
     {
@@ -85,7 +85,7 @@ public class Ventana
     }
     
     /**
-     * Función guardar. guarda un archivo
+     * Funcion guardar. guarda un archivo
      */
     private void guardarArchivo()
     {
@@ -93,7 +93,7 @@ public class Ventana
     }
     
     /**
-     * Función Salir: Sale de la aplicación.
+     * Funcion Salir: Sale de la aplicacion.
      */
     private void salir()
     {
