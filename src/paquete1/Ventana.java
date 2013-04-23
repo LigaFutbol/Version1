@@ -15,9 +15,9 @@ public class Ventana
 	/**
 	 * @param args
 	 */
-	public Ventana(String nombreVentana) 
+	public Ventana() 
 	{
-		construirVentana(nombreVentana);
+
 	}	
 	
 	/**
