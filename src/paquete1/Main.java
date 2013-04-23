@@ -12,7 +12,7 @@ import javax.swing.*;
  *
  */
 public class Main {
-	
+		
 	private static JFrame ventana;
 	
 	/**
@@ -23,91 +23,91 @@ public class Main {
 	}
 	
 	/**
-     * Create la ventana y sus componentes.
-     */
-    private static void construirVentana()
-    {
-    	ventana = new JFrame("");
-    	construirBarraMenus(ventana);
-    }
+   	 * Create la ventana y sus componentes.
+         */
+ 	private static void construirVentana()
+   	{
+    		ventana = new JFrame("");
+    		construirBarraMenus(ventana);
+   	}
     
-    /**
-     * Crea la barra de menús de la ventana principal
-     * @param ventana   La ventana donde se mostrará la barra de menús
-     */
-    private void construirBarraMenus(JFrame ventana)
-    {
-    	JMenuBar barraDeMenus = new JMenuBar();
-        ventana.setJMenuBar(barraDeMenus);
+    	/**
+     	 * Crea la barra de menï¿½s de la ventana principal
+     	 * @param ventana   La ventana donde se mostrarï¿½ la barra de menï¿½s
+    	 */
+    	private void construirBarraMenus(JFrame ventana)
+    	{
+    		JMenuBar barraDeMenus = new JMenuBar();
+    	   	ventana.setJMenuBar(barraDeMenus);
         
-        //----------------------------------crea el menú Archivo
+        	//----------------------------------crea el menï¿½ Archivo
         
-        JMenu menuArchivo = new JMenu("Archivo");
-        barraDeMenus.add(menuArchivo);
+        	JMenu menuArchivo = new JMenu("Archivo");
+        	barraDeMenus.add(menuArchivo);
+        	
+        	//--------------------------------crea los items de Archivo
         
-        //--------------------------------crea los items de Archivo
+        	JMenuItem itemAbrirArchivo = new JMenuItem("Abrir");
+        	itemAbrirArchivo.addActionListener(new ActionListener() {
+            		public void actionPerformed(ActionEvent e) { 
+                		abrirArchivo(); 
+            		}
+        	});
+        	menuArchivo.add(itemAbrirArchivo);
         
-        JMenuItem itemAbrirArchivo = new JMenuItem("Abrir");
-        itemAbrirArchivo.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) { 
-                abrirArchivo(); 
-            }
-        });
-        menuArchivo.add(itemAbrirArchivo);
-        
-        JMenuItem itemGuardarArchivo = new JMenuItem("Guardar");
-        itemGuardarArchivo.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) { 
-                guardarArchivo(); 
-            }
-        });
-        menuArchivo.add(itemAbrirArchivo);
+        	JMenuItem itemGuardarArchivo = new JMenuItem("Guardar");
+        	itemGuardarArchivo.addActionListener(new ActionListener() {
+           		public void actionPerformed(ActionEvent e) { 
+                		guardarArchivo(); 
+            		}
+        	});
+        	menuArchivo.add(itemAbrirArchivo);
 
-        JMenuItem itemSalir = new JMenuItem("Salir");
-        itemSalir.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) { 
-                salir(); 
-            }
-        });
-        menuArchivo.add(itemSalir);
-    }
+        	JMenuItem itemSalir = new JMenuItem("Salir");
+        	itemSalir.addActionListener(new ActionListener() {
+            		public void actionPerformed(ActionEvent e) { 
+                	salir(); 
+            		}
+        	});
+        	menuArchivo.add(itemSalir);
+    	}
     
-    /**
-     * Función Abrir. Abre un archivo
-     */
-    private void abrirArchivo()
-    {
+    	/**
+     	 * Funciï¿½n Abrir. Abre un archivo
+     	 */
+    	private void abrirArchivo()
+    	{
+    				
+    	}
+    
+    	/**
+    	 * Funciï¿½n guardar. guarda un archivo
+    	 */
+    	private void guardarArchivo()
+    	{
     	
-    }
+    	}
     
-    /**
-     * Función guardar. guarda un archivo
-     */
-    private void guardarArchivo()
-    {
-    	
-    }
+    	/**
+    	 * Funciï¿½n Salir: Sale de la aplicaciï¿½n.
+    	 */
+   	private void salir()
+    	{
+       		if(mostrarSalirSiNo() == 0){
+            		System.exit(0);
+        	}
+    	}
     
-    /**
-     * Función Salir: Sale de la aplicación.
-     */
-    private void salir()
-    {
-        if(mostrarSalirSiNo() == 0){
-            System.exit(0);
-        }
-    }
-    
-    /**
-     * comprueba si la persona realmente desea salir
-     */
-    private int mostrarSalirSiNo()
-    {
-        int opcion = JOptionPane.showConfirmDialog(ventana, 
-                    "realmente quiere salir?",
-                    "",
-                    JOptionPane.YES_NO_OPTION);
-        return opcion;
-    }
+    	/**
+     	 * comprueba si la persona realmente desea salir
+    	 */
+    	private int mostrarSalirSiNo()
+   	{
+        	int opcion = JOptionPane.showConfirmDialog(ventana, 
+                    	"realmente quiere salir?",
+                    	"",
+                    	JOptionPane.YES_NO_OPTION);
+        	return opcion;
+    	}
 
 }
