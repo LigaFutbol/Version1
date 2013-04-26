@@ -31,6 +31,7 @@ public class Ventana
     	Container panelContenedor = ventana.getContentPane();
         panelContenedor.setLayout(new BorderLayout());//dispone el contenido en partes para poder ir añadiendolos
         
+        
     	ventana.pack();
         ventana.setVisible(true);
     }
@@ -50,30 +51,46 @@ public class Ventana
         barraDeMenus.add(menuArchivo);
         
         //--------------------------------crea los items de Archivo
+        {
+        	JMenuItem itemNuevoArchivo = new JMenuItem("Nuevo archivo");
+        	itemNuevoArchivo.addActionListener(new ActionListener() {
+        		public void actionPerformed(ActionEvent e) { 
+        			nuevoArchivo(); 
+        		}
+        	});
         
-        JMenuItem itemAbrirArchivo = new JMenuItem("Abrir");
-        itemAbrirArchivo.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) { 
-                abrirArchivo(); 
-            }
-        });
-        menuArchivo.add(itemAbrirArchivo);
+        	JMenuItem itemAbrirArchivo = new JMenuItem("Abrir");
+        	itemAbrirArchivo.addActionListener(new ActionListener() {
+        		public void actionPerformed(ActionEvent e) { 
+        			abrirArchivo(); 
+        		}
+        	});
+        	menuArchivo.add(itemAbrirArchivo);
         
-        JMenuItem itemGuardarArchivo = new JMenuItem("Guardar");
-        itemGuardarArchivo.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) { 
-                guardarArchivo(); 
-            }
-        });
-        menuArchivo.add(itemGuardarArchivo);
+        	JMenuItem itemGuardarArchivo = new JMenuItem("Guardar");
+        	itemGuardarArchivo.addActionListener(new ActionListener() {
+        		public void actionPerformed(ActionEvent e) { 
+        			guardarArchivo(); 
+        		}
+        	});
+        	menuArchivo.add(itemGuardarArchivo);
 
-        JMenuItem itemSalir = new JMenuItem("Salir");
-        itemSalir.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) { 
-                salir(); 
-            }
-        });
-        menuArchivo.add(itemSalir);
+        	JMenuItem itemSalir = new JMenuItem("Salir");
+        	itemSalir.addActionListener(new ActionListener() {
+        		public void actionPerformed(ActionEvent e) { 
+        			salir(); 
+        		}
+        	});
+        	menuArchivo.add(itemSalir);
+        }
+    }
+    
+    /**
+     * Funcion nuevo. crea un nuevo archivo
+     */
+    private void nuevoArchivo()
+    {
+    	
     }
     
     /**
@@ -98,7 +115,10 @@ public class Ventana
     private void salir()
     {
         if(mostrarSalirSiNo() == 0){
-            System.exit(0);
+            guardarArchivo();
+        }
+        else if(mostrarSalirSiNo() == 1){
+        	System.exit(0);
         }
     }
     
@@ -108,9 +128,9 @@ public class Ventana
     private int mostrarSalirSiNo()
     {
         int opcion = JOptionPane.showConfirmDialog(ventana, 
-                    "realmente quiere salir?",
-                    "",
-                    JOptionPane.YES_NO_OPTION);
+                    "No ha guardado la liga, desea hacerlo ahora?",
+                    "Liga Futbol",
+                    JOptionPane.YES_NO_CANCEL_OPTION);
         return opcion;
     }
 
